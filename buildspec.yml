@@ -1,0 +1,16 @@
+  version: 0.2
+
+  phases:
+    install:
+      runtime-versions:
+        python: 3.9
+      commands:
+        - echo Installing dependencies
+        - pip install -r requirements.txt -t package/
+        - cp lambda_function.py package/
+
+  artifacts:
+    files:
+      - '**/*'
+    base-directory: package
+    discard-paths: no
